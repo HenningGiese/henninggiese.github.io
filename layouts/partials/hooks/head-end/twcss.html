@@ -1,4 +1,3 @@
-{{/* Force-include Tailwind bundle built from assets/css/_entry.css */}}
-{{- $opts := dict "targetPath" "assets/bundle.css" -}}
-{{- $css := resources.Get "css/_entry.css" | toCSS $opts | postCSS | minify | fingerprint -}}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{/* Build Tailwind CSS from assets/css/_entry.css using PostCSS (no SCSS) */}}
+{{- $css := resources.Get "css/_entry.css" | postCSS | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
