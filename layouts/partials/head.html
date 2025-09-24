@@ -1,0 +1,23 @@
+{{- /* Minimal head that guarantees CSS is loaded */ -}}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ if .Title }}{{ .Title }} – {{ end }}{{ .Site.Title }}</title>
+
+  {{/* If the theme had head partials, try to include them first */}}
+  {{ partialCached "site_head" . }}
+
+  <!-- Force Tailwind so layout actually styles -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { ink: "#0b3b75" } } } };
+  </script>
+
+  <!-- Icons (Font Awesome + Academicons) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" rel="stylesheet">
+
+  {{/* If theme adds extra head-end bits, include them too */}}
+  {{ partialCached "site_head_end" . }}
+</head>
