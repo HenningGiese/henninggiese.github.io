@@ -1,0 +1,27 @@
+{{ define "main" }}{{ end }}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ partial "head.html" . | safeHTML }} <!-- ok if missing -->
+  </head>
+  <body>
+    <main class="prose" style="max-width:960px;margin:2rem auto;padding:0 1rem;">
+      {{ with .Content }}
+        {{ . }}
+      {{ else }}
+        {{/* Render the landing sections if present */}}
+        {{ if .Params.sections }}
+          {{ range .Params.sections }}
+            {{ partial (printf "blox/%s.html" .block) (dict "page" $ "section" .) | safeHTML }}
+          {{ end }}
+        {{ else }}
+          <h1>{{ .Site.Title }}</h1>
+          <p>This is a minimal homepage placeholder. If you see this, the theme’s home template wasn’t picked, but HTML is working.</p>
+        {{ end }}
+      {{ end }}
+    </main>
+  </body>
+</html>
