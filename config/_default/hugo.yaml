@@ -2,7 +2,6 @@
 # Hugo configuration
 # ==============================
 
-# Site info
 title: Henning Giese
 baseURL: "https://henninggiese.com/"
 
@@ -14,17 +13,11 @@ outputs:
   home: [HTML, RSS]
   section: [HTML, RSS]
 
-############################
-## LANGUAGE
-############################
 defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
 
-############################
-## CONTENT & BUILD
-############################
 summaryLength: 30
 pagination:
   pagerSize: 10
@@ -40,35 +33,22 @@ ignoreFiles:
 
 permalinks:
   authors: "/author/:slug/"
-
 disableAliases: true
 
-############################
-## IMAGES
-############################
 imaging:
   resampleFilter: lanczos
   quality: 90
   anchor: smart
   hint: picture
 
-############################
-## TAXONOMIES
-############################
 taxonomies:
   author: authors
   tag: tags
   publication_type: publication_types
 
-############################
-## MARKUP / HIGHLIGHT
-############################
 markup:
   highlight:
     lineNos: false
 
-############################
-## SECURITY / SITEMAP
-############################
 security: {}
 sitemap: {}
