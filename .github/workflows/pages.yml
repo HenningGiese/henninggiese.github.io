@@ -17,11 +17,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HUGO_ENV: production
+      HUGO_MODULE_PROXY: "https://proxy.golang.org"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: false
           fetch-depth: 0
 
       - name: Setup Go (for Hugo Modules)
@@ -29,31 +32,25 @@ jobs:
         with:
           go-version: '1.21.x'
 
-      - name: Cache Go/Hugo modules
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/go/pkg/mod
-            ~/.cache/hugo
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
-
       - name: Setup Hugo (extended)
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.128.0'
           extended: true
 
-      - name: Hugo mod tidy
+      # Start from a clean module state, then explicitly fetch the theme module
+      - name: Initialize Hugo Modules
         run: |
-            hugo mod tidy
-            hugo mod graph
+          go clean -modcache
+          rm -f go.mod go.sum || true
+          go mod init example.com/site
+          # *** This line is the key: force-fetch the theme module ***
+          hugo mod get github.com/HugoBlox/theme-academic-cv@latest
+          hugo mod tidy
+          hugo mod graph
 
-      - name: Build
-        env:
-          HUGO_ENV: production
-        run: hugo --minify --gc
+      - name: Build site
+        run: hugo --minify --gc --verbose
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
