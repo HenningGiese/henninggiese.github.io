@@ -1,9 +1,0 @@
-############################
-## HUGO MODULES
-## Docs: https://gohugo.io/hugo-modules/
-############################
-
-module:
-  imports:
-    # Only the theme — remove the blox-* modules causing the Go error
-    - path: github.com/HugoBlox/theme-academic-cv
