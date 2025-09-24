@@ -1,12 +1,13 @@
-{{- /* Minimal head that guarantees CSS is loaded */ -}}
+{{- /* Minimal head that guarantees CSS is loaded and never errors if theme partials are missing */ -}}
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{{ if .Title }}{{ .Title }} – {{ end }}{{ .Site.Title }}</title>
+  <title>{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}</title>
 
-  {{/* If the theme had head partials, try to include them first */}}
-  {{ partialCached "site_head" . }}
+  {{- if partialExists "site_head" -}}
+    {{ partial "site_head" . }}
+  {{- end -}}
 
   <!-- Force Tailwind so layout actually styles -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,6 +19,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" rel="stylesheet">
 
-  {{/* If theme adds extra head-end bits, include them too */}}
-  {{ partialCached "site_head_end" . }}
+  {{- if partialExists "site_head_end" -}}
+    {{ partial "site_head_end" . }}
+  {{- end -}}
+
+  {{/* If your theme uses hook slots, they will also be included if present */}}
+  {{- if partialExists "hooks/head-end" -}}
+    {{ partial "hooks/head-end" . }}
+  {{- end -}}
 </head>
