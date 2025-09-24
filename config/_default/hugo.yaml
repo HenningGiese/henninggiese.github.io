@@ -8,6 +8,12 @@ title: Henning Giese
 # Website URL
 baseURL: 'https://henninggiese.com/'
 
+# Force theme application for the home page
+theme: ["github.com/HugoBlox/theme-academic-cv"]
+
+outputs:
+  home: [HTML, RSS]   # keep home HTML simple for now
+
 ############################
 ## LANGUAGE
 ############################
