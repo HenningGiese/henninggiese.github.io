@@ -1,7 +1,7 @@
 ---
 title: ""
 date: 2025-09-16
-type: widget_page
+type: landing
 
 design:
   spacing: "3rem"
