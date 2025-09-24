@@ -1,9 +1,4 @@
-/* Hugo Blox / Academic CV expects this entry. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Optional tweaks (your dark blue) */
-:root {
-  --ink: #0b3b75;
-}
+:root { --ink: #0b3b75; }  /* optional */
