@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang | default "en" }}">
+  {{ partial "head.html" . }}
+  <body class="min-h-screen bg-white text-gray-900">
+    {{/* Try to render the site header/navbar if the theme provides one */}}
+    {{ partial "header.html" . }}
+
+    <main id="main">
+      {{ block "main" . }}
+        {{ .Content }}
+      {{ end }}
+    </main>
+
+    {{/* Try to render the site footer if the theme provides one */}}
+    {{ partial "footer.html" . }}
+  </body>
+</html>
