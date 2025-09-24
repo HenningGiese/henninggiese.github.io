@@ -1,0 +1,34 @@
+/* --- Social icon row spacing & consistency --- */
+ul.network-icon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;           /* even spacing between all icons */
+  padding-left: 0;     /* remove left indent */
+  margin: 0;           /* keep it snug */
+}
+ul.network-icon li {
+  list-style: none;
+  margin: 0;
+}
+.big-icon {
+  font-size: 1.35rem;  /* keep all icons visually similar */
+  line-height: 1;
+}
+
+/* Bluesky SVG should behave like the font icons */
+ul.network-icon svg.big-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  vertical-align: -0.125em;
+}
+
+/* --- Profile image (just in case) --- */
+img.portrait {
+  border-radius: 50%;
+  display: block;
+}
+
+/* --- Optional: slightly tighten section headings --- */
+.section-heading h1 {
+  margin-bottom: 1rem;
+}
