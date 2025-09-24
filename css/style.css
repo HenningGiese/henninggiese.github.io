@@ -32,3 +32,14 @@ img.portrait {
 .section-heading h1 {
   margin-bottom: 1rem;
 }
+
+/* Make the 'Interests' list align with the paragraph/news text */
+.ul-interests {
+  margin-left: 0;        /* kill default margin */
+  padding-left: 1rem;    /* tighten from the default ~40px */
+  list-style-position: outside;
+}
+
+.ul-interests li {
+  margin-left: 0;        /* ensure no extra indent on items */
+}
