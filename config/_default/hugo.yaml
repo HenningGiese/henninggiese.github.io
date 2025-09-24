@@ -5,9 +5,6 @@
 title: Henning Giese
 baseURL: "https://henninggiese.com/"
 
-# Force the theme (works alongside Hugo Modules)
-theme: ["github.com/HugoBlox/theme-academic-cv"]
-
 # Keep outputs simple so home always renders HTML
 outputs:
   home: [HTML, RSS]
