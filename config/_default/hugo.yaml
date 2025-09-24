@@ -1,63 +1,74 @@
-# Configuration of Hugo
-# Guide: https://docs.hugoblox.com/tutorial/
-# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
-# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+# ==============================
+# Hugo configuration
+# ==============================
 
-# Website name
+# Site info
 title: Henning Giese
-# Website URL
-baseURL: 'https://henninggiese.com/'
+baseURL: "https://henninggiese.com/"
 
-# Force theme application for the home page
+# Force the theme (works alongside Hugo Modules)
 theme: ["github.com/HugoBlox/theme-academic-cv"]
 
+# Keep outputs simple so home always renders HTML
 outputs:
-  home: [HTML, RSS]   # keep home HTML simple for now
+  home: [HTML, RSS]
+  section: [HTML, RSS]
 
 ############################
 ## LANGUAGE
 ############################
-
 defaultContentLanguage: en
 hasCJKLanguage: false
 defaultContentLanguageInSubdir: false
 removePathAccents: true
 
 ############################
-## ADVANCED
+## CONTENT & BUILD
 ############################
-
-build:
-  writeStats: true
-enableGitInfo: false
 summaryLength: 30
 pagination:
   pagerSize: 10
 enableEmoji: true
 enableRobotsTXT: true
-footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+timeout: 600000
+ignoreFiles:
+  - \.ipynb$
+  - .ipynb_checkpoints$
+  - \.Rmd$
+  - \.Rmarkdown$
+  - _cache$
+
 permalinks:
-  authors: '/author/:slug/'
+  authors: "/author/:slug/"
+
 disableAliases: true
-outputs:
-  home: [HTML, RSS, headers, redirects, backlinks]
-  section: [HTML, RSS]
+
+############################
+## IMAGES
+############################
 imaging:
   resampleFilter: lanczos
   quality: 90
   anchor: smart
   hint: picture
-timeout: 600000
+
+############################
+## TAXONOMIES
+############################
 taxonomies:
   author: authors
   tag: tags
   publication_type: publication_types
+
+############################
+## MARKUP / HIGHLIGHT
+############################
 markup:
-  _merge: deep
   highlight:
     lineNos: false
-security:
-  _merge: deep
-sitemap:
-  _merge: deep
+
+############################
+## SECURITY / SITEMAP
+############################
+security: {}
+sitemap: {}
