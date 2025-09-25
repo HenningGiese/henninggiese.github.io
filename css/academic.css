@@ -55,3 +55,14 @@
 
 /* keep spacing consistent with the other icons */
 .network-icon li .icon-ssrn-square{ margin:0 6px; }
+
+
+/* image-based social icons (SVG or PNG) */
+.network-icon img.icon-img{
+  width:32px;
+  height:32px;
+  display:inline-block;
+  vertical-align:middle;
+  margin:0 6px;
+}
+
