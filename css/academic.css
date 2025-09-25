@@ -26,3 +26,20 @@
 }
 .pub-chip:hover { text-decoration: none; filter: brightness(0.95); }
 .pub-chip i { line-height: 1; }
+
+
+/* SSRN icon — use the SVG as a mask so it inherits currentColor like font icons */
+.icon-ssrn {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+
+  /* Change the path below if your filename differs */
+  -webkit-mask: url('/images/ssrn.svg') no-repeat center / contain;
+  mask: url('/images/ssrn.svg') no-repeat center / contain;
+}
+
+/* Optional: ensure equal spacing if needed (matches FA/Ai spacing) */
+.network-icon li .icon-ssrn { margin: 0 6px; }
