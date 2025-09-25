@@ -43,3 +43,15 @@
 
 /* Optional: ensure equal spacing if needed (matches FA/Ai spacing) */
 .network-icon li .icon-ssrn { margin: 0 6px; }
+
+
+/* SSRN square icon (inherits currentColor like the font icons) */
+.icon-ssrn-square{
+  width:32px;height:32px;display:inline-block;vertical-align:middle;
+  background-color:currentColor;
+  -webkit-mask:url('/images/ssrn-square.svg') no-repeat center / contain;
+          mask:url('/images/ssrn-square.svg') no-repeat center / contain;
+}
+
+/* keep spacing consistent with the other icons */
+.network-icon li .icon-ssrn-square{ margin:0 6px; }
