@@ -30,8 +30,8 @@
 
 /* SSRN icon — use the SVG as a mask so it inherits currentColor like font icons */
 .icon-ssrn {
-  width: 40px;
-  height: 36px;
+  width: 44px;
+  height: 38px;
   display: inline-block;
   vertical-align: -2px;
   background-color: currentColor;
