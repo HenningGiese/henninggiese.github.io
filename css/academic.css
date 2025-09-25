@@ -47,7 +47,7 @@
 
 /* SSRN square icon (inherits currentColor like the font icons) */
 .icon-ssrn-square{
-  width:32px;height:32px;display:inline-block;vertical-align:middle;
+  width:40px;height:36px;display:inline-block;vertical-align:-2px;
   background-color:currentColor;
   -webkit-mask:url('/images/ssrn-square.svg') no-repeat center / contain;
           mask:url('/images/ssrn-square.svg') no-repeat center / contain;
