@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://henninggiese.com/</loc>
@@ -6,19 +6,12 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Add more canonical pages as you create them (no #fragments): -->
-  <!--
+
+  
   <url>
-    <loc>https://henninggiese.com/publications/</loc>
-    <lastmod>2025-07-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://henninggiese.com/files/cv.pdf</loc>
+    <loc>https://henninggiese.com/uploads/CV.pdf</loc>
     <lastmod>2025-07-31T00:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  -->
-</urlset>
+
