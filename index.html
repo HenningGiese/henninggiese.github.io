@@ -348,7 +348,7 @@
 
     <!-- Email -->
     <li>
-      <a href="mailto:henning.giese@uni-paderborn.de">
+      <a class="js-email" href="#" rel="nofollow">
         <i class="fas fa-envelope big-icon"></i>
       </a>
     </li>
@@ -787,7 +787,7 @@
       
       <li>
         <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
-        <span id="person-email"><a href="mailto:henning.giese@upb.de">henning.giese@upb.de</a></span>
+        <span id="person-email"><a class="js-email" href="#" rel="nofollow">Email me</a></span>
       </li>
       
 
@@ -988,5 +988,18 @@
   </div>
 </div>
 
+  
+<script>
+  (function () {
+    var user = "henning.giese";
+    var domain = "upb.de";                // keep one canonical domain
+    var addr = user + "@" + domain;
+    document.querySelectorAll("a.js-email").forEach(function (el) {
+      el.href = "mailto:" + addr;
+      el.textContent = el.textContent.trim() ? el.textContent : addr;
+    });
+  })();
+</script>
+  
 </body>
 </html>
