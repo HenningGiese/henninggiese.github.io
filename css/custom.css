@@ -11,3 +11,17 @@
   color: #0088cc;
   border-bottom-color: #0088cc;
 }
+
+/* Subtle person links in the News section */
+.news-people a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.news-people a:hover,
+.news-people a:focus {
+  color: #0088cc;
+  border-bottom-color: #0088cc;
+}
