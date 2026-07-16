@@ -27,3 +27,9 @@
   text-decoration: none !important;
   border-bottom-color: #0088cc;
 }
+
+.pub-media-eu {
+  display: block;
+  clear: both;
+  margin-bottom: 1rem !important;
+}
