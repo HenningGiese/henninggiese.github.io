@@ -28,12 +28,19 @@
   border-bottom-color: #0088cc;
 }
 
+/* Spacing below European Commission media block */
 .pub-media-eu {
   display: block;
   clear: both;
   margin-bottom: 1rem !important;
 }
 
+/* Reduce vertical gap between affiliations and profile icons */
+#profile .portrait-title {
+  margin-bottom: 0.35rem !important;
+}
+
 #profile .network-icon {
-  margin-top: 0.5rem !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
