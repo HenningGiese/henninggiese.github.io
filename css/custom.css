@@ -33,3 +33,7 @@
   clear: both;
   margin-bottom: 1rem !important;
 }
+
+#profile .network-icon {
+  margin-top: 0.5rem !important;
+}
